@@ -1,15 +1,19 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+var express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose');
+
+mongoose.connect("mongodb://localhost/yelp_camp");
+
+// SCHEMA SETUP
+var campgroundSchema = new mongoose.Schema({
+    name: String,
+    image: String,
+});
+
+var Campground = mongoose.model("Campground", campgroundSchema);
 
 
-
-var campGrounds = [
-    {name: "Grafika Cikole", image: "https://bacaterus.com/wp-content/uploads/2016/07/Grafika-Cikole-%E2%80%93-Lembang-Bandung.jpg"},
-    {name: "Kampung Jawa Kembang", image: "https://bacaterus.com/wp-content/uploads/2016/07/Kampung-Jawa-Kembang-%E2%80%93-Sleman-Yogyakarta-Copy-600x338-Copy.jpg"},
-    {name: "Dusun Kreatif", image: "https://bacaterus.com/wp-content/uploads/2016/07/Dusun-Kreatif-%E2%80%93-Medan-Copy-600x295-Copy.jpg"},
-    {name: "Lembah Hijau", image: "https://bacaterus.com/wp-content/uploads/2016/07/Taman-Rekreasi-Lembah-Hijau-%E2%80%93-Samarinda-Copy.jpg"}
-]
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -20,7 +24,13 @@ app.get("/", function(req, res){
 });
 
 app.get("/campgrounds", function(req, res){
-    res.render("campgrounds", {campGrounds: campGrounds});
+    Campground.find({}, function(err, campgrounds){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("campgrounds", {campGrounds: campgrounds});
+        }
+    });
 
 });
 
@@ -28,9 +38,13 @@ app.post("/campgrounds", function(req, res){
     var name = req.body.name;
     var image = req.body.image;
 
-    campGrounds.push({name: name, image: image});
-
-    res.redirect("/campgrounds");
+    Campground.create({name: name, image: image}, function(err, campground){
+        if (err){
+            console.log(err);
+        } else {
+            res.redirect('/campgrounds');
+        }
+    });
     
 });
 
