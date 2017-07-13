@@ -5,17 +5,18 @@ data = [
     {
         name: 'Hutan Hijau', 
         image: 'https://farm8.staticflickr.com/7338/9627572189_12dbd88ebe.jpg',
-        description: 'blah blah blah'
+        description: 'Proin molestie, metus nec pulvinar euismod, elit tellus consectetur tortor, non tempus lorem felis nec dui. Maecenas suscipit odio metus, et hendrerit nisl cursus quis. Proin lobortis leo est, ut tempus leo dignissim non. Aenean molestie condimentum sem. Vestibulum et faucibus nibh, eget tristique eros. Morbi ac laoreet neque, ut viverra orci. Duis malesuada elit at ante suscipit, nec sagittis arcu aliquam. Pellentesque a eros ultrices, lobortis elit vel, suscipit velit. Aenean non felis lacus.'
+
     },
     {
         name: 'Padang Tandus', 
         image: 'https://farm5.staticflickr.com/4016/4369518024_0f64300987.jpg',
-        description: 'blah blah blah'
+        description: 'Proin molestie, metus nec pulvinar euismod, elit tellus consectetur tortor, non tempus lorem felis nec dui. Maecenas suscipit odio metus, et hendrerit nisl cursus quis. Proin lobortis leo est, ut tempus leo dignissim non. Aenean molestie condimentum sem. Vestibulum et faucibus nibh, eget tristique eros. Morbi ac laoreet neque, ut viverra orci. Duis malesuada elit at ante suscipit, nec sagittis arcu aliquam. Pellentesque a eros ultrices, lobortis elit vel, suscipit velit. Aenean non felis lacus.'
     },
     {
         name: 'Pantai', 
         image: 'http://www.photosforclass.com/download/14435096036',
-        description: 'blah blah blah'
+        description: 'Proin molestie, metus nec pulvinar euismod, elit tellus consectetur tortor, non tempus lorem felis nec dui. Maecenas suscipit odio metus, et hendrerit nisl cursus quis. Proin lobortis leo est, ut tempus leo dignissim non. Aenean molestie condimentum sem. Vestibulum et faucibus nibh, eget tristique eros. Morbi ac laoreet neque, ut viverra orci. Duis malesuada elit at ante suscipit, nec sagittis arcu aliquam. Pellentesque a eros ultrices, lobortis elit vel, suscipit velit. Aenean non felis lacus.'
     }
 ]
 
